@@ -1,4 +1,4 @@
-package com.saumitrakapoor.div0;
+package lessthan1300;
 
 import java.io.BufferedReader;
 import java.io.IOException;

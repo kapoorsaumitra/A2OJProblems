@@ -1,11 +1,11 @@
-package com.saumitrakapoor.div0;
+package lessthan1300;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Prob266A {
+public class Prob80A {
 
     static class FastReader {
         BufferedReader br;
@@ -50,21 +50,36 @@ public class Prob266A {
         }
     }
 
+    static boolean isPrime(int n){
+        if (n==1)
+            return false;
+        for (int i =2;i*i<=n;i++){
+            if (n%i==0)
+                return false;
+        }
+        return true;
+    }
     public static void main(String[] args) {
         FastReader s = new FastReader();
-        int n = s.nextInt();
-        String str = s.nextLine();
-        if (n==1)
-            System.out.println(0);
-        else
-        {
-            int c =0;
-            for (int p =0;p<n-1;p++){
-                if (str.charAt(p)==str.charAt(p+1))
-                    c++;
+        int a = s.nextInt();
+        int b = s.nextInt();
+        int c =0;
+        for (int k =a+1;k<=b;k++){
+            if (!isPrime(b)){
+                System.out.println("NO");
+                break;
             }
-            System.out.println(c);
+            if (isPrime(k))
+                c++;
+            if(k==b){
+                if (c==1)
+                    System.out.println("YES");
+                else
+                    System.out.println("NO");
+
+            }
         }
+
 
     }
 
